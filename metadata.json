@@ -1,0 +1,5 @@
+{
+  "name": "YouTube Usage Control Center",
+  "description": "A React application to manage settings for the YouTube Usage Control Chrome Extension. Set time limits, whitelist channels, and view usage analytics.",
+  "requestFramePermissions": []
+}

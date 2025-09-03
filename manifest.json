@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Usage Control",
+  "version": "1.0.0",
+  "description": "Manage your YouTube viewing time effectively.",
+  "options_page": "index.html",
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["assets/content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_title": "YouTube Usage Control Settings",
+    "default_popup": "index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "block.html", "block.css", "assets/block.js" ],
+      "matches": [ "*://*.youtube.com/*" ]
+    }
+  ]
+}

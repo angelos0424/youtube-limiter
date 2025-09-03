@@ -1,0 +1,127 @@
+/* 
+  Styles for the YouTube Usage Control extension's content script elements.
+*/
+
+.yuwc-widget-container {
+    position: fixed;
+    z-index: 9999;
+    background-color: #212121;
+    color: #fff;
+    border: 1px solid #383838;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto', 'Arial', sans-serif;
+    width: 280px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 14px;
+    overflow: hidden;
+}
+
+/* Positioning */
+.yuwc-widget-container.bottom-right { bottom: 20px; right: 20px; }
+.yuwc-widget-container.bottom-left { bottom: 20px; left: 20px; }
+.yuwc-widget-container.top-right { top: 20px; right: 20px; }
+.yuwc-widget-container.top-left { top: 20px; left: 20px; }
+
+/* Move Handles */
+.yuwc-move-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m3 12v-4.5m0 4.5h-4.5m4.5 0L15 15m-6-6l6 6m-6-6l-6-6m12 0h4.5m-4.5 0v4.5m0-4.5L15 9" /></svg>');
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.yuwc-widget-container:hover .yuwc-move-handle {
+    opacity: 1;
+}
+
+.yuwc-move-handle:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.yuwc-move-handle[data-position="top-left"] { top: -10px; left: -10px; }
+.yuwc-move-handle[data-position="top-right"] { top: -10px; right: -10px; }
+.yuwc-move-handle[data-position="bottom-left"] { bottom: -10px; left: -10px; }
+.yuwc-move-handle[data-position="bottom-right"] { bottom: -10px; right: -10px; }
+
+/* Header */
+.yuwc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #313131;
+    border-bottom: 1px solid #383838;
+    cursor: default;
+    user-select: none;
+}
+.yuwc-header span {
+    font-weight: 500;
+}
+#yuwc-toggle-btn {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    border-radius: 4px;
+}
+#yuwc-toggle-btn:hover {
+    color: #fff;
+    background-color: #444;
+}
+
+/* Content */
+.yuwc-content {
+    padding: 12px;
+}
+
+.yuwc-stat-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.yuwc-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.yuwc-label {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.yuwc-value-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.yuwc-limit {
+    font-size: 12px;
+    color: #717171;
+    font-weight: 400;
+}
+
+/* Collapsed State */
+.yuwc-widget-container.collapsed {
+    width: auto;
+    background-color: #313131;
+}
+.yuwc-widget-container.collapsed .yuwc-header {
+    border-bottom: none;
+}

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #181818;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    padding: 40px;
+    background-color: #282828;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.logo {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#reason {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 3px solid #FF0000;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.quote p {
+    margin: 0 0 10px 0;
+}
+
+.quote span {
+    display: block;
+    text-align: right;
+    font-weight: 300;
+    color: #ccc;
+}
+
+#open-settings {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#open-settings:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
